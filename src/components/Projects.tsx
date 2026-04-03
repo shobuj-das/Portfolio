@@ -2,7 +2,7 @@
 
 import { motion } from 'framer-motion';
 import { ArrowUpRight, FolderCode } from 'lucide-react';
-import { projects } from '@/data/portfolio';
+import { projects } from '@/data/projects';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Reveal from '@/components/ui/Reveal';
 

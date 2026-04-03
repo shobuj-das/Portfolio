@@ -8,7 +8,7 @@ import {
   Wrench,
   type LucideIcon,
 } from 'lucide-react';
-import { skillCategories } from '@/data/portfolio';
+import { skillCategories } from '@/data/skills';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Reveal from '@/components/ui/Reveal';
 
