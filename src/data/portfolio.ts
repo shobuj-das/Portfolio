@@ -31,13 +31,6 @@ export type ExperienceItem = {
   highlights: string[];
 };
 
-export type BlogPost = {
-  title: string;
-  description: string;
-  readingTime: string;
-  tag: string;
-};
-
 export const profile = {
   name: 'Shobuj Chandra Das',
   role: 'QA Automation Engineer',
@@ -128,26 +121,5 @@ export const experience: ExperienceItem[] = [
       'Integrated API and performance test suites into release gates to catch critical issues before production.',
       'Collaborated with engineering teams to reduce escaped defects through actionable test reporting.',
     ],
-  },
-];
-
-export const blogPosts: BlogPost[] = [
-  {
-    title: 'Building Stable Playwright Suites for Fast-Moving Products',
-    description: 'Practical patterns for selectors, retries, fixtures, and flake prevention in CI.',
-    readingTime: '6 min read',
-    tag: 'Playwright',
-  },
-  {
-    title: 'A QA Engineer\'s Guide to API Test Pyramid Decisions',
-    description: 'How to split checks across unit, service, and end-to-end layers for better signal.',
-    readingTime: '5 min read',
-    tag: 'API Testing',
-  },
-  {
-    title: 'From Manual Regression to Risk-Based Automation Coverage',
-    description: 'A framework for prioritizing high-value scenarios and tracking quality ROI.',
-    readingTime: '7 min read',
-    tag: 'Quality Strategy',
   },
 ];
