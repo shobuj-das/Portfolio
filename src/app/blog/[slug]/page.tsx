@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { ArrowLeft, House, CalendarDays } from 'lucide-react';
-import { getAllBlogSlugs, getBlogPostBySlug } from '@/lib/blog';
+import { getAllBlogSlugs, getBlogPostBySlug } from '@/data/blog';
 
 type BlogPostPageProps = {
   params: Promise<{ slug: string }>;

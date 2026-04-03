@@ -11,7 +11,7 @@ export type SocialLink = {
 
 export const profile = {
   name: 'Shobuj Chandra Das',
-  role: 'QA Automation Engineer',
+  role: 'Jr. Test Automation Engineer',
   tagline:
     'I build reliable, scalable quality pipelines that ship faster releases with measurable confidence.',
   location: 'Dhaka, Bangladesh',
@@ -27,6 +27,3 @@ export const profile = {
   ] satisfies SocialLink[],
   resumeUrl: '/resume.pdf',
 };
-
-
-
