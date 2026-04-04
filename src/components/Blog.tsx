@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { ArrowUpRight, BookOpenText, Clock3 } from 'lucide-react';
 import SectionHeader from '@/components/ui/SectionHeader';
-import { getRecentBlogPosts } from '@/lib/blog';
+import { getRecentBlogPosts } from '@/data/blog';
 
 export default function Blog() {
   const blogPosts = getRecentBlogPosts(3);

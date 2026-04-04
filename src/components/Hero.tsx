@@ -11,7 +11,7 @@ import {
   MapPin,
   ShieldCheck,
 } from 'lucide-react';
-import { profile } from '@/data/portfolio';
+import { profile } from '@/data/profile';
 
 const socialIcons = {
   GitHub: FolderGit2,

@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import Link from 'next/link';
 import { ArrowLeft, ArrowUpRight, CalendarDays } from 'lucide-react';
 import TopNav from '@/components/TopNav';
-import { getAllBlogPosts } from '@/lib/blog';
+import { getAllBlogPosts } from '@/data/blog';
 
 export const metadata: Metadata = {
   title: 'Blog | Shobuj Chandra Das',
