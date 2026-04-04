@@ -21,7 +21,7 @@ const categoryIcons: LucideIcon[] = [
 
 export default function Skills() {
   return (
-    <section id="skills" className="px-4 py-20 md:px-6 md:py-24">
+    <section id="skills" className="scroll-mt-24 px-4 py-20 md:px-6 md:py-24">
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeader
           eyebrow="Core Strengths"

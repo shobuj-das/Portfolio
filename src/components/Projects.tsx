@@ -8,7 +8,7 @@ import Reveal from '@/components/ui/Reveal';
 
 export default function Projects() {
   return (
-    <section id="projects" className="px-4 py-20 md:px-6 md:py-24">
+    <section id="projects" className="scroll-mt-24 px-4 py-20 md:px-6 md:py-24">
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeader
           eyebrow="Selected Work"
