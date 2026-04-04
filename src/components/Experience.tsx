@@ -33,7 +33,7 @@ export default function Experience() {
                     </p>
                   </div>
 
-                  <div className="space-y-2 text-sm text-slate-300">
+                  <div className="flex w-full flex-col items-start gap-2 text-sm text-slate-300 md:w-auto md:items-end">
                     <p className="inline-flex items-center gap-2">
                       <Calendar size={14} className="text-cyan-300" />
                       {item.duration}

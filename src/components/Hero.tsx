@@ -4,7 +4,6 @@ import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
   Download,
-  FolderGit2,
   Link2,
   Mail,
   MapPin,
@@ -13,9 +12,29 @@ import {
 } from 'lucide-react';
 import { profile } from '@/data/profile';
 
+type SocialIconProps = {
+  className?: string;
+};
+
+function GitHubIcon({ className }: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M12 .5a12 12 0 0 0-3.79 23.38c.6.11.82-.26.82-.58v-2.24c-3.34.72-4.04-1.61-4.04-1.61-.55-1.38-1.33-1.75-1.33-1.75-1.08-.75.08-.74.08-.74 1.2.08 1.82 1.21 1.82 1.21 1.06 1.82 2.8 1.3 3.49.99.1-.78.42-1.3.76-1.6-2.67-.3-5.48-1.34-5.48-5.95 0-1.31.47-2.39 1.24-3.23-.12-.3-.54-1.53.12-3.19 0 0 1-.32 3.3 1.23a11.53 11.53 0 0 1 6 0c2.3-1.55 3.3-1.23 3.3-1.23.66 1.66.25 2.89.12 3.19.77.84 1.24 1.92 1.24 3.23 0 4.63-2.81 5.64-5.49 5.94.43.37.81 1.1.81 2.23v3.3c0 .32.22.7.83.58A12 12 0 0 0 12 .5Z" />
+    </svg>
+  );
+}
+
+function LinkedInIcon({ className }: SocialIconProps) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" className={className} fill="currentColor">
+      <path d="M19 3A2 2 0 0 1 21 5v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14Zm-9.9 6.75H6.53V18h2.57V9.75Zm5.85-.2c-1.24 0-2.02.69-2.35 1.18V9.75h-2.47V18h2.57v-4.34c0-1.15.22-2.27 1.65-2.27 1.41 0 1.43 1.32 1.43 2.35V18h2.57v-4.79c0-2.35-.5-3.66-2.97-3.66ZM7.82 5.62a1.49 1.49 0 1 0 0 2.98 1.49 1.49 0 0 0 0-2.98Z" />
+    </svg>
+  );
+}
+
 const socialIcons = {
-  GitHub: FolderGit2,
-  LinkedIn: Link2,
+  GitHub: GitHubIcon,
+  LinkedIn: LinkedInIcon,
 } as const;
 
 export default function Hero() {
@@ -66,7 +85,7 @@ export default function Hero() {
 
           <div className="mt-6 flex items-center justify-center gap-2 sm:gap-3">
             {profile.socialLinks.map((link) => {
-              const Icon = socialIcons[link.label as keyof typeof socialIcons] ?? Mail;
+              const Icon = socialIcons[link.label as keyof typeof socialIcons];
 
               return (
                 <a
@@ -76,7 +95,11 @@ export default function Hero() {
                   rel={link.href.startsWith('http') ? 'noreferrer' : undefined}
                   className="inline-flex items-center gap-2 rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs font-medium text-slate-100 transition hover:border-cyan-200/50 hover:bg-white/10 sm:text-sm"
                 >
-                  <Icon size={15} />
+                  {Icon ? (
+                    <Icon className="h-[15px] w-[15px]" />
+                  ) : (
+                    <Link2 size={15} />
+                  )}
                   {link.label}
                 </a>
               );
@@ -84,17 +107,19 @@ export default function Hero() {
           </div>
 
           <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/50 px-4 py-3 text-center">
-            <p className="inline-flex items-center gap-2 text-sm font-medium text-white">
-              <Phone size={14} className="text-cyan-200" />
-              {profile.phone}
-            </p>
-            <a
-              href={`mailto:${profile.email}`}
-              className="mt-2 inline-flex items-center gap-2 text-sm text-slate-200 transition hover:text-cyan-100"
-            >
-              <Mail size={14} className="text-cyan-200" />
-              {profile.email}
-            </a>
+            <div className="flex flex-col items-center gap-2">
+              <p className="inline-flex items-center gap-2 text-sm font-medium text-white">
+                <Phone size={14} className="text-cyan-200" />
+                {profile.phone}
+              </p>
+              <a
+                href={`mailto:${profile.email}`}
+                className="inline-flex items-center gap-2 text-sm text-slate-200 transition hover:text-cyan-100"
+              >
+                <Mail size={14} className="text-cyan-200" />
+                {profile.email}
+              </a>
+            </div>
           </div>
 
           <div className="mt-5 flex flex-wrap items-center justify-between gap-3">

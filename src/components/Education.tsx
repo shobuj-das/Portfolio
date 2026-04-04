@@ -30,7 +30,12 @@ export default function Education() {
                       <GraduationCap size={17} className="text-cyan-200" />
                       {item.degree}
                     </h3>
-                    <p className="mt-2 text-sm text-slate-300">{item.institution}</p>
+                    <div className="mt-2">
+                      <p className="inline-flex items-center gap-2 text-sm text-slate-300">
+                        <School size={14} className="text-cyan-200" />
+                        {item.institution}
+                      </p>
+                    </div>
                     <p className="mt-2 text-xs uppercase tracking-[0.16em] text-cyan-200/80">
                       Passing Year: {item.passingYear}
                     </p>
