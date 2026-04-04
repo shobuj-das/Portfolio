@@ -7,7 +7,7 @@ import {
   FolderGit2,
   Link2,
   Mail,
-  MessageCircle,
+  MapPin,
   Phone,
   ShieldCheck,
 } from 'lucide-react';
@@ -16,7 +16,6 @@ import { profile } from '@/data/profile';
 const socialIcons = {
   GitHub: FolderGit2,
   LinkedIn: Link2,
-  Email: Mail,
 } as const;
 
 export default function Hero() {
@@ -89,30 +88,28 @@ export default function Hero() {
               <Phone size={14} className="text-cyan-200" />
               {profile.phone}
             </p>
+            <a
+              href={`mailto:${profile.email}`}
+              className="mt-2 inline-flex items-center gap-2 text-sm text-slate-200 transition hover:text-cyan-100"
+            >
+              <Mail size={14} className="text-cyan-200" />
+              {profile.email}
+            </a>
           </div>
 
           <div className="mt-5 flex flex-wrap items-center justify-between gap-3">
             <p className="inline-flex items-center rounded-full border border-white/15 bg-white/5 px-3 py-2 text-xs text-slate-200 sm:text-sm">
+              <MapPin size={14} className="mr-1.5 text-cyan-200" />
               {profile.location}
             </p>
 
             <a
               href={profile.resumeUrl}
-              className="inline-flex items-center gap-2 rounded-full border border-white/20 bg-white px-5 py-2.5 text-sm font-semibold text-slate-900 transition hover:-translate-y-0.5 hover:bg-cyan-100"
+              className="inline-flex items-center gap-2 rounded-full border border-white/25 bg-transparent px-5 py-2.5 text-sm font-semibold text-white transition hover:-translate-y-0.5 hover:border-cyan-200/50 hover:bg-white/5"
             >
               <Download size={16} />
               Download Resume
             </a>
-
-            {/* <a
-              href={profile.whatsappUrl}
-              target="_blank"
-              rel="noreferrer"
-              aria-label="WhatsApp"
-              className="inline-flex h-10 w-10 items-center justify-center rounded-full border border-emerald-200/35 bg-emerald-400/10 text-emerald-200 transition hover:-translate-y-0.5 hover:bg-emerald-400/20"
-            >
-              <MessageCircle size={18} />
-            </a> */}
           </div>
         </motion.div>
       </div>
