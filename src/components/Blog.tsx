@@ -7,7 +7,7 @@ export default function Blog() {
   const blogPosts = getRecentBlogPosts(3);
 
   return (
-    <section id="blog" className="px-4 pb-20 pt-20 md:px-6 md:pb-24 md:pt-24">
+    <section id="blog" className="scroll-mt-24 px-4 pb-20 pt-20 md:px-6 md:pb-24 md:pt-24">
       <div className="mx-auto w-full max-w-6xl">
         <SectionHeader
           eyebrow="Knowledge Sharing"

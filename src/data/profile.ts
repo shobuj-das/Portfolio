@@ -1,13 +1,7 @@
-export type Stat = {
-  label: string;
-  value: string;
-};
-
 export type SocialLink = {
   label: string;
   href: string;
 };
-
 
 export const profile = {
   name: 'Shobuj Chandra Das',
@@ -15,15 +9,12 @@ export const profile = {
   tagline:
     'I build reliable, scalable quality pipelines that ship faster releases with measurable confidence.',
   location: 'Dhaka, Bangladesh',
-  stats: [
-    { label: 'Automation Coverage', value: '85%+' },
-    { label: 'Regression Time Reduced', value: '60%' },
-    { label: 'CI Stability', value: '99.2%' },
-  ] satisfies Stat[],
   socialLinks: [
     { label: 'GitHub', href: 'https://github.com/shobuj-das' },
     { label: 'LinkedIn', href: 'https://www.linkedin.com/in/shobuj-das/' },
-    { label: 'Email', href: 'mailto:dasshobuj@gmail.com' },
   ] satisfies SocialLink[],
+  email: 'dasshobuj@gmail.com',
+  phone: '+8801571416153',
+  whatsappUrl: 'https://wa.me/8801571416153',
   resumeUrl: '/resume.pdf',
 };
