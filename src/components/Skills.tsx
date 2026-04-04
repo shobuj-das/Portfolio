@@ -8,11 +8,16 @@ import {
   Wrench,
   type LucideIcon,
 } from 'lucide-react';
-import { skillCategories } from '@/data/skills';
+import { skillCategories, type SkillCategory } from '@/data/skills';
 import SectionHeader from '@/components/ui/SectionHeader';
 import Reveal from '@/components/ui/Reveal';
 
-const categoryIcons: LucideIcon[] = [Bug, ChartNoAxesColumnIncreasing, Code2, Wrench];
+const categoryIcons: LucideIcon[] = [
+  Bug,
+  ChartNoAxesColumnIncreasing,
+  Code2,
+  Wrench,
+];
 
 export default function Skills() {
   return (
@@ -25,7 +30,7 @@ export default function Skills() {
         />
 
         <div className="grid gap-5 md:grid-cols-2">
-          {skillCategories.map((category, index) => {
+          {skillCategories.map((category: SkillCategory, index: number) => {
             const Icon = categoryIcons[index % categoryIcons.length];
 
             return (
@@ -39,12 +44,14 @@ export default function Skills() {
                     {category.title}
                   </div>
 
-                  <p className="text-sm leading-6 text-slate-300">{category.summary}</p>
+                  <p className="text-sm leading-6 text-slate-300">
+                    {category.summary}
+                  </p>
 
                   <ul className="mt-4 flex flex-wrap gap-2">
-                    {category.skills.map((skill) => (
+                    {category.skills.map((skill: string, i: number) => (
                       <li
-                        key={skill}
+                        key={`${category.title}-${skill}-${i}`}
                         className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-100"
                       >
                         {skill}
