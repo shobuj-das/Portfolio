@@ -33,4 +33,16 @@ export const experience: ExperienceItem[] = [
       'Validated payment and booking systems',
     ],
   },
+  {
+    company: 'AK Software Limited',
+    role: 'Test Automation',
+    duration: 'Aug 2025 – Nov 2025',
+    location: 'Comilla',
+    startDate: '2026-02-03',
+    highlights: [
+      'Maintained Playwright automation framework',
+      'Developed automated test scenarios',
+      'Validated payment and booking systems',
+    ],
+  },
 ];

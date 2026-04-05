@@ -15,6 +15,5 @@ export const profile = {
   ] satisfies SocialLink[],
   email: 'dasshobuj@gmail.com',
   phone: '+8801571416153',
-  whatsappUrl: 'https://wa.me/8801571416153',
   resumeUrl: '/resume.pdf',
 };
