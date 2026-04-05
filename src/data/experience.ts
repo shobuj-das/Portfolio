@@ -10,7 +10,7 @@ export type ExperienceItem = {
 export const experience: ExperienceItem[] = [
   {
     company: 'Technonext Software Limited',
-    role: 'QA Automation Engineer',
+    role: 'Jr. Test Automation Engieer',
     duration: 'Dec 2025 – Present',
     location: 'Dhaka',
     startDate: '2025-12-01',
@@ -23,7 +23,7 @@ export const experience: ExperienceItem[] = [
   },
   {
     company: 'Technonext Software Limited',
-    role: 'Test Automation',
+    role: 'Intern Test Automation',
     duration: 'Aug 2025 – Nov 2025',
     location: 'Dhaka',
     startDate: '2025-08-03',

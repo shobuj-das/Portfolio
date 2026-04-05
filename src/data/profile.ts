@@ -7,7 +7,7 @@ export const profile = {
   name: 'Shobuj Chandra Das',
   role: 'Jr. Test Automation Engineer',
   tagline:
-    'I build reliable, scalable quality pipelines that ship faster releases with measurable confidence.',
+    'Engineering high-quality software through scalable test automation, API validation, and CI/CD integration while leveraging AI-driven testing to enhance coverage, detect defects intelligently, and accelerate reliable releases.',
   location: 'Dhaka, Bangladesh',
   socialLinks: [
     { label: 'GitHub', href: 'https://github.com/shobuj-das' },

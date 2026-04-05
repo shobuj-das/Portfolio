@@ -1,7 +1,7 @@
 export type AchievementItem = {
   title: string;
-  type: 'Publication' | 'Course' | 'Bootcamp';
-  description: string;
+  type: 'Publication' | 'Course' | 'Bootcamp' | 'Contest';
+  highlights: string[];
   image?: string;
 };
 
@@ -9,19 +9,42 @@ export const achievements: AchievementItem[] = [
   {
     title: 'Research Paper on QA Automation Reliability',
     type: 'Publication',
-    description:
-      'Co-authored a research paper focused on reducing flaky end-to-end test behavior through smarter selector and retry strategies.',
+    highlights: [
+      'Co-authored a paper on reducing flaky end-to-end test failures.',
+      'Focused on resilient selector design and retry governance patterns.',
+      'Documented measurable stability improvements in regression runs.',
+      'Presented findings as a practical framework for QA teams.',
+    ],
+    image: 'public/qa-harbor.jpeg',
   },
   {
     title: 'Advanced API Testing and Contract Validation',
     type: 'Course',
-    description:
-      'Completed a professional online course covering API schema governance, contract testing, and automation best practices.',
+    highlights: [
+      'Completed advanced modules on API schema governance.',
+      'Built hands-on contract testing workflows for CI pipelines.',
+      'Applied versioning checks to prevent backward compatibility breaks.',
+      'Strengthened test strategy for service-to-service reliability.',
+    ],
   },
   {
     title: 'Industry QA Engineering Bootcamp',
     type: 'Bootcamp',
-    description:
-      'Participated in an intensive bootcamp with real project simulations on web, API, and performance testing workflows.',
+    highlights: [
+      'Delivered web, API, and performance testing simulations.',
+      'Practiced risk-based prioritization for release cycles.',
+      'Improved automation structure for maintainability and speed.',
+    ],
+  },
+  {
+    title: 'Intra University Programming Contest',
+    type: 'Contest',
+    highlights: [
+      'Solved algorithmic problems under strict time constraints.',
+      'Collaborated on solution validation and edge-case analysis.',
+      'Improved debugging speed and test-driven problem solving.',
+      'Ranked among active participants in the final round.',
+    ],
+    image: 'public/qa-harbor.jpeg',
   },
 ];
