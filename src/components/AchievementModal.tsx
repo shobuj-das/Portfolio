@@ -33,9 +33,8 @@ export default function AchievementModal({ item, isOpen, onClose }: AchievementM
           <motion.div
             role="dialog"
             aria-modal="true"
-            aria-labelledby={item.image ? 'achievement-modal-title' : undefined}
-            aria-label={!item.image ? `${item.title} highlights` : undefined}
-            className="glass-panel relative max-h-[88vh] w-full max-w-2xl overflow-y-auto rounded-2xl p-5 md:p-6"
+            aria-labelledby="achievement-modal-title"
+            className="glass-panel relative max-h-[92vh] w-full max-w-5xl overflow-y-auto rounded-2xl p-5 md:p-6"
             initial={{ opacity: 0, scale: 0.96, y: 12 }}
             animate={{ opacity: 1, scale: 1, y: 0 }}
             exit={{ opacity: 0, scale: 0.96, y: 12 }}
@@ -51,21 +50,14 @@ export default function AchievementModal({ item, isOpen, onClose }: AchievementM
               <X size={16} />
             </button>
 
-            {item.image ? (
-              <>
-                <p className="inline-flex w-fit items-center rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
-                  {item.type}
-                </p>
-                <h3
-                  id="achievement-modal-title"
-                  className="mt-3 pr-10 text-xl font-semibold text-white"
-                >
-                  {item.title}
-                </h3>
-              </>
-            ) : null}
+            <p className="inline-flex w-fit items-center rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
+              {item.type}
+            </p>
+            <h3 id="achievement-modal-title" className="mt-3 pr-10 text-xl font-semibold text-white">
+              {item.title}
+            </h3>
 
-            <ul className={item.image ? 'mt-5 space-y-2' : 'mt-2 space-y-2'}>
+            <ul className="mt-5 space-y-2">
               {item.highlights.map((highlight) => (
                 <li key={`${item.title}-${highlight}`} className="text-sm leading-6 text-slate-200">
                   <span className="mr-2 text-cyan-200">•</span>
@@ -75,13 +67,13 @@ export default function AchievementModal({ item, isOpen, onClose }: AchievementM
             </ul>
 
             {item.image ? (
-              <div className="relative mt-6 h-56 overflow-hidden rounded-xl border border-white/10 sm:h-64">
+              <div className="relative mt-6 h-[45vh] min-h-[280px] overflow-hidden rounded-xl border border-white/10 bg-slate-950/60 sm:h-[55vh]">
                 <Image
                   src={normalizeImagePath(item.image)}
                   alt={`${item.title} certificate`}
                   fill
-                  className="object-cover"
-                  sizes="(max-width: 640px) 100vw, 672px"
+                  className="object-contain p-2 sm:p-3"
+                  sizes="(max-width: 768px) 92vw, (max-width: 1280px) 84vw, 1100px"
                 />
               </div>
             ) : null}
