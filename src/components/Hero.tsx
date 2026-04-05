@@ -11,6 +11,7 @@ import {
   ShieldCheck,
 } from 'lucide-react';
 import { profile } from '@/data/profile';
+import QuotesRotator from '@/components/QuotesRotator';
 
 type SocialIconProps = {
   className?: string;
@@ -64,6 +65,8 @@ export default function Hero() {
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
             {profile.tagline}
           </p>
+
+          <QuotesRotator />
         </motion.div>
 
         <motion.div
