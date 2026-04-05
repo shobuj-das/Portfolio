@@ -2,7 +2,7 @@ import type { Metadata } from 'next';
 import './globals.css';
 
 export const metadata: Metadata = {
-  title: 'Shobuj Chandra Das | QA Automation Engineer',
+  title: 'Shobuj | Automation Engineer',
   description:
     'Portfolio of Shobuj Chandra Das, QA Automation Engineer specializing in Playwright, Selenium, API testing, and quality strategy.',
 };

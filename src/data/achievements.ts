@@ -1,6 +1,6 @@
 export type AchievementItem = {
   title: string;
-  type: 'Publication' | 'Course' | 'Bootcamp';
+  type: 'Publication' | 'Course' | 'Bootcamp' | 'Contest';
   description: string;
   image?: string;
 };
@@ -21,6 +21,12 @@ export const achievements: AchievementItem[] = [
   {
     title: 'Industry QA Engineering Bootcamp',
     type: 'Bootcamp',
+    description:
+      'Participated in an intensive bootcamp with real project simulations on web, API, and performance testing workflows.',
+  },
+  {
+    title: 'Intra University Programming Contest',
+    type: 'Contest',
     description:
       'Participated in an intensive bootcamp with real project simulations on web, API, and performance testing workflows.',
   },
