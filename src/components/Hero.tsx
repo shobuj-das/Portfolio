@@ -3,6 +3,8 @@
 import Image from 'next/image';
 import { motion } from 'framer-motion';
 import {
+  BriefcaseBusiness,
+  Building2,
   Download,
   Link2,
   Mail,
@@ -10,6 +12,7 @@ import {
   Phone,
   ShieldCheck,
 } from 'lucide-react';
+import { experience } from '@/data/experience';
 import { profile } from '@/data/profile';
 import QuotesRotator from '@/components/QuotesRotator';
 
@@ -39,6 +42,12 @@ const socialIcons = {
 } as const;
 
 export default function Hero() {
+  const currentExperience = [...experience].sort(
+    (a, b) => new Date(b.startDate).getTime() - new Date(a.startDate).getTime(),
+  )[0];
+  const currentRole = currentExperience?.role ?? profile.role;
+  const currentCompany = currentExperience?.company;
+
   return (
     <section
       id="home"
@@ -60,7 +69,20 @@ export default function Hero() {
           <h1 className="mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
             {profile.name}
           </h1>
-          <p className="mt-3 text-lg font-medium text-cyan-200">{profile.role}</p>
+
+          <div className="mt-3 flex flex-wrap items-center gap-4">
+            <p className="inline-flex items-center gap-2 text-lg font-medium text-cyan-200">
+              <BriefcaseBusiness size={16} className="shrink-0 text-cyan-300" />
+              {currentRole}
+            </p>
+
+            {currentCompany ? (
+              <p className="inline-flex items-center gap-2 text-sm font-medium text-slate-300 md:text-base">
+                <Building2 size={15} className="shrink-0 text-cyan-200" />
+                {currentCompany}
+              </p>
+            ) : null}
+          </div>
 
           <p className="mt-5 max-w-2xl text-base leading-7 text-slate-300 md:text-lg">
             {profile.tagline}
