@@ -55,4 +55,17 @@ export const skillCategories: SkillCategory[] = [
       'Python',
     ],
   },
+  {
+  title: 'Dev Workflow and Tooling-----',
+    summary:
+      'Integrating testing into CI/CD workflows for faster feedback.',
+    skills: [
+      'Git',
+      'GitHub Actions',
+      'Jira',
+      'Java',
+      'TypeScript',
+      'Python',
+    ],
+  },
 ];
