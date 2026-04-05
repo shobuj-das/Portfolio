@@ -31,9 +31,19 @@ export default function Projects() {
                 <h3 className="mt-4 text-xl font-semibold text-white">{project.title}</h3>
                 <p className="mt-3 text-sm leading-6 text-slate-300">{project.description}</p>
 
-                <p className="mt-4 rounded-xl border border-emerald-200/20 bg-emerald-400/10 p-3 text-sm text-emerald-100">
-                  {project.impact}
-                </p>
+                <div className="mt-4 rounded-xl border border-emerald-200/20 bg-emerald-400/10 p-3">
+                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/90">
+                    Highlights
+                  </p>
+                  <ul className="mt-2 space-y-1.5">
+                    {project.highlights.map((highlight) => (
+                      <li key={`${project.title}-${highlight}`} className="flex gap-2 text-sm text-emerald-100">
+                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-200" />
+                        <span>{highlight}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
 
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {project.stack.map((tech) => (
