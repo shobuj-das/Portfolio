@@ -9,6 +9,7 @@ import {
   Link2,
   Mail,
   MapPin,
+  MessageCircleMore,
   Phone,
   ShieldCheck,
 } from 'lucide-react';
@@ -135,15 +136,13 @@ export default function Hero() {
             <div className="flex flex-col items-center gap-2">
               <p className="inline-flex items-center gap-2 text-sm font-medium text-white">
                 <Phone size={14} className="text-cyan-200" />
+                <MessageCircleMore size={14} className="text-cyan-200" />
                 {profile.phone}
               </p>
-              <a
-                href={`mailto:${profile.email}`}
-                className="inline-flex items-center gap-2 text-sm text-slate-200 transition hover:text-cyan-100"
-              >
+              <p className="inline-flex items-center gap-2 text-sm text-slate-200">
                 <Mail size={14} className="text-cyan-200" />
                 {profile.email}
-              </a>
+              </p>
             </div>
           </div>
 
