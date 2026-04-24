@@ -30,13 +30,9 @@ export default function QuotesRotator({
     return () => window.clearInterval(timer);
   }, [items.length, intervalMs]);
 
-  useEffect(() => {
-    if (currentIndex >= items.length) {
-      setCurrentIndex(0);
-    }
-  }, [currentIndex, items.length]);
-
   if (!items.length) return null;
+
+  const activeIndex = currentIndex % items.length;
 
   return (
     <div className={`mt-8 ${className}`} aria-live="polite">
@@ -57,14 +53,14 @@ export default function QuotesRotator({
         <div className="min-h-[3.5rem]">
           <AnimatePresence mode="wait">
             <motion.p
-              key={currentIndex}
+              key={activeIndex}
               initial={{ opacity: 0, y: 16, filter: 'blur(4px)' }}
               animate={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
               exit={{ opacity: 0, y: -16, filter: 'blur(4px)' }}
               transition={{ duration: 0.5, ease: [0.22, 1, 0.36, 1] }}
               className="text-base italic leading-7 text-cyan-100/90 md:text-lg"
             >
-              “{items[currentIndex]}”
+              “{items[activeIndex]}”
             </motion.p>
           </AnimatePresence>
         </div>

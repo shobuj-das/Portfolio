@@ -9,11 +9,11 @@ export type Project = {
 
 export const projects: Project[] = [
   {
-    title: 'Swag Lab Automation Framework',
-    category: 'Web Test Automation',
+    title: 'Swag Lab Automation',
+    category: 'Web Application Automation',
     description:
       'A Cucumber + Java + POM framework designed for reliable UI regression coverage with reusable test modules.',
-    stack: ['Java', 'Selenium', 'Cucumber', 'TestNG', 'Maven'],
+    stack: ['Java', 'Selenium', 'Cucumber', 'TestNG', 'Maven', 'Allure'],
     highlights: [
       'Reduced manual regression effort by standardizing repeatable checkout and auth flows.',
       'Improved suite maintainability with reusable page objects and step definitions.',
@@ -21,14 +21,14 @@ export const projects: Project[] = [
     link: 'https://github.com/shobuj-das/Swag-Lab-Automation-Cucumber-Java-POM',
   },
   {
-    title: 'Mobile Automation Framework',
+    title: 'Mobile Application Automation',
     category: 'Mobile QA',
     description:
       'An Appium-based framework for Android automation with data-driven execution and clear reporting pipelines.',
     stack: ['Java', 'Appium', 'TestNG', 'POM', 'Allure'],
     highlights: [
-      'Enabled faster smoke validation for critical app journeys on each release cycle.',
-      'Strengthened release readiness through consistent test reporting and failure visibility.',
+      // 'Enabled faster smoke validation for critical app journeys',
+      // 'Strengthened release readiness through consistent test reporting and failure visibility.',
     ],
     link: 'https://github.com/shobuj-das/Mobile-App-Automation-POM-Java-Appium',
   },

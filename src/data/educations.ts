@@ -20,7 +20,7 @@ export const educations: EducationItem[] = [
   },
   {
     degree: 'Secondary School Certificate',
-    institution: 'Sankuchail High School',
+    institution: 'Shongkuchail High School',
     result: 'GPA: 4.39/5',
     passingYear: '2016',
   },

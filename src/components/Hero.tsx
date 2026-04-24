@@ -58,13 +58,14 @@ export default function Hero() {
 
       <div className="mx-auto grid w-full max-w-6xl items-center gap-10 lg:grid-cols-[1.2fr_0.8fr]">
         <motion.div
+          className="min-w-0"
           initial={{ opacity: 0, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
         >
-          <div className="inline-flex items-center gap-2 rounded-full border border-cyan-200/30 bg-cyan-300/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-cyan-100">
-            <ShieldCheck size={14} />
-            Quality-Driven Engineering
+          <div className="inline-flex max-w-full items-center gap-2 rounded-full border border-cyan-200/30 bg-cyan-300/10 px-4 py-1.5 text-xs uppercase tracking-[0.2em] text-cyan-100">
+            <ShieldCheck size={14} className="shrink-0" />
+            <span className="min-w-0 break-words">Quality-Driven Engineering</span>
           </div>
 
           <h1 className="mt-6 text-4xl font-semibold leading-tight text-white md:text-6xl">
@@ -134,14 +135,14 @@ export default function Hero() {
 
           <div className="mt-5 rounded-2xl border border-white/10 bg-slate-900/50 px-4 py-3 text-center">
             <div className="flex flex-col items-center gap-2">
-              <p className="inline-flex items-center gap-2 text-sm font-medium text-white">
-                <Phone size={14} className="text-cyan-200" />
-                <MessageCircleMore size={14} className="text-cyan-200" />
-                {profile.phone}
+              <p className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 text-sm font-medium text-white">
+                <Phone size={14} className="shrink-0 text-cyan-200" />
+                <MessageCircleMore size={14} className="shrink-0 text-cyan-200" />
+                <span className="break-all">{profile.phone}</span>
               </p>
-              <p className="inline-flex items-center gap-2 text-sm text-slate-200">
-                <Mail size={14} className="text-cyan-200" />
-                {profile.email}
+              <p className="inline-flex max-w-full flex-wrap items-center justify-center gap-2 text-sm text-slate-200">
+                <Mail size={14} className="shrink-0 text-cyan-200" />
+                <span className="break-all">{profile.email}</span>
               </p>
             </div>
           </div>
