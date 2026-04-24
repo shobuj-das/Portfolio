@@ -17,57 +17,63 @@ export default function Projects() {
         />
 
         <div className="grid gap-5 lg:grid-cols-3">
-          {projects.map((project, index) => (
-            <Reveal key={project.title} delay={index * 0.08}>
-              <motion.article
-                whileHover={{ y: -5 }}
-                className="glass-panel flex h-full flex-col rounded-2xl p-5"
-              >
-                <div className="inline-flex w-fit items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
-                  <FolderCode size={14} />
-                  {project.category}
-                </div>
+          {projects.map((project, index) => {
+            const highlights = project.highlights?.filter((highlight) => highlight.trim()) ?? [];
 
-                <h3 className="mt-4 text-xl font-semibold text-white">{project.title}</h3>
-                <p className="mt-3 text-sm leading-6 text-slate-300">{project.description}</p>
+            return (
+              <Reveal key={project.title} delay={index * 0.08}>
+                <motion.article
+                  whileHover={{ y: -5 }}
+                  className="glass-panel flex h-full min-w-0 flex-col rounded-2xl p-5"
+                >
+                  <div className="inline-flex w-fit max-w-full items-center gap-2 rounded-full border border-cyan-200/20 bg-cyan-300/10 px-3 py-1 text-xs text-cyan-100">
+                    <FolderCode size={14} className="shrink-0" />
+                    <span className="min-w-0 break-words">{project.category}</span>
+                  </div>
 
-                <div className="mt-4 rounded-xl border border-emerald-200/20 bg-emerald-400/10 p-3">
-                  <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/90">
-                    Highlights
-                  </p>
-                  <ul className="mt-2 space-y-1.5">
-                    {project.highlights.map((highlight) => (
-                      <li key={`${project.title}-${highlight}`} className="flex gap-2 text-sm text-emerald-100">
-                        <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-200" />
-                        <span>{highlight}</span>
+                  <h3 className="mt-4 text-xl font-semibold text-white">{project.title}</h3>
+                  <p className="mt-3 text-sm leading-6 text-slate-300">{project.description}</p>
+
+                  {highlights.length ? (
+                    <div className="mt-4 rounded-xl border border-emerald-200/20 bg-emerald-400/10 p-3">
+                      <p className="text-xs font-semibold uppercase tracking-[0.14em] text-emerald-200/90">
+                        Highlights
+                      </p>
+                      <ul className="mt-2 space-y-1.5">
+                        {highlights.map((highlight) => (
+                          <li key={`${project.title}-${highlight}`} className="flex gap-2 text-sm text-emerald-100">
+                            <span className="mt-[7px] h-1.5 w-1.5 shrink-0 rounded-full bg-emerald-200" />
+                            <span>{highlight}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
+
+                  <ul className="mt-4 flex flex-wrap gap-2">
+                    {project.stack.map((tech) => (
+                      <li
+                        key={tech}
+                        className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-100"
+                      >
+                        {tech}
                       </li>
                     ))}
                   </ul>
-                </div>
 
-                <ul className="mt-4 flex flex-wrap gap-2">
-                  {project.stack.map((tech) => (
-                    <li
-                      key={tech}
-                      className="rounded-full border border-white/10 bg-white/5 px-3 py-1 text-xs text-slate-100"
-                    >
-                      {tech}
-                    </li>
-                  ))}
-                </ul>
-
-                <a
-                  href={project.link}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-cyan-200 transition hover:text-cyan-100"
-                >
-                  View repository
-                  <ArrowUpRight size={16} />
-                </a>
-              </motion.article>
-            </Reveal>
-          ))}
+                  <a
+                    href={project.link}
+                    target="_blank"
+                    rel="noreferrer"
+                    className="mt-5 inline-flex items-center gap-2 text-sm font-medium text-cyan-200 transition hover:text-cyan-100"
+                  >
+                    View repository
+                    <ArrowUpRight size={16} />
+                  </a>
+                </motion.article>
+              </Reveal>
+            );
+          })}
         </div>
       </div>
     </section>

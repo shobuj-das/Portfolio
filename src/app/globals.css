@@ -16,6 +16,7 @@
 
 * {
   border-color: rgb(148 163 184 / 0.2);
+  box-sizing: border-box;
 }
 
 html,
@@ -32,6 +33,9 @@ body {
   color: var(--text-main);
   font-family: var(--font-sans);
   line-height: 1.5;
+  overflow-x: hidden;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
 }
 
 .glass-panel {
@@ -45,6 +49,25 @@ body {
     0 10px 30px rgb(2 6 23 / 0.35),
     inset 0 1px 0 rgb(248 250 252 / 0.06);
   backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+}
+
+@supports not ((backdrop-filter: blur(1px)) or (-webkit-backdrop-filter: blur(1px))) {
+  .glass-panel {
+    background: rgb(15 23 42 / 0.92);
+  }
+}
+
+a,
+button,
+p,
+h1,
+h2,
+h3,
+h4,
+li,
+span {
+  overflow-wrap: anywhere;
 }
 
 .prose-blog {

@@ -56,7 +56,7 @@ export default function Experience() {
                         {item.highlights.map((highlight) => (
                           <li
                             key={`${item.company}-${highlight}`}
-                            className="flex gap-3 text-sm leading-6 text-slate-200"
+                            className="flex min-w-0 gap-3 text-sm leading-6 text-slate-200"
                           >
                             <BadgeCheck size={17} className="mt-0.5 shrink-0 text-emerald-300" />
                             <span>{highlight}</span>
