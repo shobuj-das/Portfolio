@@ -36,36 +36,46 @@ export const skillCategories: SkillCategory[] = [
     skills: [
       'Postman',
       'Newman',
-      'REST Assured',
+      'Pytest',
       'JMeter',
+      'Locust',
       'SQL',
       'MySQL',
     ],
   },
   {
-    title: 'Dev Workflow and Tooling',
+    title: 'Programming Language',
     summary:
-      'Integrating testing into CI/CD workflows for faster feedback.',
+      '',
     skills: [
-      'Git',
-      'GitHub Actions',
-      'Jira',
       'Java',
-      'TypeScript',
       'Python',
+      'C',
+      'C++'
     ],
   },
   {
-  title: 'Dev Workflow and Tooling-----',
+    title: 'Tools & Concepts',
     summary:
       'Integrating testing into CI/CD workflows for faster feedback.',
     skills: [
       'Git',
-      'GitHub Actions',
+      'GitHub',
       'Jira',
-      'Java',
-      'TypeScript',
-      'Python',
+      'VS Code',
+      'PyCharm',
+      'OOP',
+      'SDLC',
+      'STLC',
+    ],
+  },
+  {
+    title: 'Operating System',
+    summary:
+      '',
+    skills: [
+      'Linux', 
+      'Windows',
     ],
   },
 ];
